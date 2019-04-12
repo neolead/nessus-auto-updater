@@ -66,6 +66,6 @@ if os.name == 'nt':
         os.system( '""C:\\\\Program Files\\\\Tenable\\\\Nessus\\\\nessuscli" fetch --register "' + str(activation_code.group()))
         os.system( '""C:\\\\Program Files\\\\Tenable\\\\Nessus\\\\nessuscli" update "')
 else:
-    cmd = ('/opt/nessus/sbin/nessuscli fetch --register ' + str(activation_code.group()) + ';nessuscli update; systemctl restart nessusd')
+    cmd = ('/opt/nessus/sbin/nessuscli fetch --register ' + str(activation_code.group()) + ';/opt/nessus/sbin/nessuscli update; systemctl restart nessusd')
     os.system(cmd)
 
